@@ -52,6 +52,7 @@ class ModelID():
     GAUSS_2D_ROTATED = 3
     CAUCHY_2D_ELLIPTIC = 4
     LINEAR_1D = 5
+    BI_EXPONENT = 8
 
 
 class EstimatorID():
