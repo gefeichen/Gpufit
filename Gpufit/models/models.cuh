@@ -9,6 +9,7 @@
 #include "cauchy_2d_elliptic.cuh"
 #include "fletcher_powell_helix.cuh"
 #include "brown_dennis.cuh"
+#include "bi_exponent.cuh"
 
 __device__ void calculate_model(
     ModelID const model_id,
@@ -48,6 +49,9 @@ __device__ void calculate_model(
         break;
     case BROWN_DENNIS:
         calculate_brown_dennis(parameters, n_fits, n_points, value, derivative, point_index, fit_index, chunk_index, user_info, user_info_size);
+        break;
+    case BI_EXPONENT:
+        calculate_biexp(parameters, n_fits, n_points, value, derivative, point_index, fit_index, chunk_index, user_info, user_info_size);
         break;
     default:
         break;
